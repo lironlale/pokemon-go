@@ -11,6 +11,7 @@ const Search = () => {
 
         try {
             const response = await sendDataToApi(searchedPokemon); // Call the API function
+            console.log(response);
             Alert.alert('Success', `API responded with: ${JSON.stringify(response)}`);
         } catch (error) {
             Alert.alert('Error', 'Something went wrong. Please try again.');
@@ -27,7 +28,8 @@ const Search = () => {
                 style={styles.input}
                 value={searchedPokemon}
                 onSubmitEditing={handleSendData}
-                onChangeText={setSearchText}></TextInput>
+                onChangeText={setSearchText}>
+            </TextInput>
         </View>
     );
 };
